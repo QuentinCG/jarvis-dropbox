@@ -1,1 +1,4 @@
-*HELLO WORLD*==say "Hello World"
+*UPLOAD*FICHIER*EXEMPLE*DISCRETEMENT*==jv_pg_dr_upload_file "$var_jv_pg_dr_file_from_jarvis" "$var_jv_pg_dr_file_to_dropbox" True
+*UPLOAD*FICHIER*EXEMPLE*==jv_pg_dr_upload_file "$var_jv_pg_dr_file_from_jarvis" "$var_jv_pg_dr_file_to_dropbox"
+*TELECHARGE*FICHIER*EXEMPLE*DISCRETEMENT*==jv_pg_dr_download_file "$var_jv_pg_dr_file_from_dropbox" "$var_jv_pg_dr_file_to_jarvis" True
+*TELECHARGE*FICHIER*EXEMPLE*==jv_pg_dr_download_file "$var_jv_pg_dr_file_from_dropbox" "$var_jv_pg_dr_file_to_jarvis"
