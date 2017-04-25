@@ -9,7 +9,8 @@
 jv_pg_dr_upload_file()
 {
   # Send request to dropbox
-  result=`python3 plugins/jarvis-dropbox/script/dropbox_handler.py --token "$var_jv_pg_dr_oauth2_token" --in "$1" --out "$2" --upload`
+  local dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+  local result=`python3 $dir/script/dropbox_handler.py --token "$var_jv_pg_dr_oauth2_token" --in "$1" --out "$2" --upload`
 
   # Show the result to user (if requested)
   if [[ $? -eq 0 ]]; then
@@ -23,7 +24,7 @@ jv_pg_dr_upload_file()
     fi
   fi
 
-return 1
+  return 1
 }
 
 # Download file from dropbox
@@ -35,7 +36,8 @@ return 1
 jv_pg_dr_download_file()
 {
   # Send request to dropbox
-  result=`python3 plugins/jarvis-dropbox/script/dropbox_handler.py --token "$var_jv_pg_dr_oauth2_token" --in "$1" --out "$2" --download`
+  local dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+  local result=`python3 $dir/script/dropbox_handler.py --token "$var_jv_pg_dr_oauth2_token" --in "$1" --out "$2" --download`
 
   # Show the result to user (if requested)
   if [[ $? -eq 0 ]]; then
@@ -45,9 +47,9 @@ jv_pg_dr_download_file()
     return 0
   else
     if [[ ! $3 =~ "True" ]]; then
-      say "$(jv_pg_dr_lang downloadd_file_failed)"
+      say "$(jv_pg_dr_lang download_file_failed)"
     fi
   fi
 
-return 1
+  return 1
 }
