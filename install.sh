@@ -10,7 +10,7 @@
 [[ -z $(which python3-pip) ]] && sudo apt-get install python3-pip
 
 # Install pyserial (needed for the dropbox python library)
-sudo pip2.7 install dropbox
+sudo pip2 install dropbox
 sudo pip3 install dropbox
 
 # Copy latest version of "dropbox sender/receiver" python script
